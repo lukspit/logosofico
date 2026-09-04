@@ -12,13 +12,11 @@ import {
   ExternalLink,
   FileText,
   Fullscreen,
-  GraduationCap,
   Layers3,
   LibraryBig,
   MessagesSquare,
   NotebookPen,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 
 const totalSlides = 7;
@@ -199,19 +197,17 @@ const slides = [
   <SlideFrame key="delivery" number={6} eyebrow="O que será entregue">
     <div className="w-full">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div className="max-w-3xl"><Tag>Entrega completa</Tag><h2 className="mt-6 font-serif text-[clamp(40px,5vw,70px)] leading-[1] tracking-[-0.04em]">Pronta para funcionar<br /><span className="text-[#178187]">no colégio.</span></h2></div>
-        <p className="max-w-md text-[14px] leading-relaxed text-[#697870]">Em 45 dias, a plataforma será entregue configurada, validada e publicada, com o escopo acordado pronto para uso.</p>
+        <div className="max-w-3xl"><Tag>Entrega completa</Tag><h2 className="mt-6 font-serif text-[clamp(40px,5vw,70px)] leading-[1] tracking-[-0.04em]">Uma plataforma própria,<br /><span className="text-[#178187]">sob controle do colégio.</span></h2></div>
+        <p className="max-w-md text-[14px] leading-relaxed text-[#697870]">Ao final dos 45 dias, o Colégio Logosófico recebe a solução definida durante a implantação, finalizada, publicada e pronta para uso.</p>
       </div>
-      <div className="mt-9 grid grid-cols-2 gap-3 lg:grid-cols-5">
+      <div className="mt-9 grid gap-4 md:grid-cols-3">
         {[
-          [ShieldCheck, "Acessos e estrutura", "Perfis, permissões e dados configurados"],
-          [BookOpenText, "Conteúdos organizados", "Materiais previstos no escopo, prontos para consulta"],
-          [NotebookPen, "Experiência docente", "Leitura, organização e preparação de aulas"],
-          [Sparkles, "Assistente contextual", "Inteligência conectada ao acervo aprovado pelo colégio"],
-          [GraduationCap, "Entrada em operação", "Publicação, configuração e orientação inicial"],
+          [Layers3, "Infraestrutura própria", "Ambientes e serviços configurados em nome do colégio, com sua identidade e seus dados."],
+          [Check, "Escopo concluído", "O escopo acordado durante a implantação será desenvolvido, validado e entregue em funcionamento."],
+          [ShieldCheck, "Controle e acesso", "O colégio recebe os acessos administrativos e assume o controle técnico da plataforma e de sua infraestrutura."],
         ].map(([Icon, title, text]) => {
           const ItemIcon = Icon as typeof ShieldCheck;
-          return <div key={String(title)} className="min-h-[170px] rounded-[23px] border border-[#dae4de] bg-white p-5"><ItemIcon className="size-5 text-[#17777b]" strokeWidth={1.8} /><h3 className="mt-7 font-serif text-[20px] leading-tight">{String(title)}</h3><p className="mt-2 text-[11px] leading-relaxed text-[#718078]">{String(text)}</p></div>;
+          return <div key={String(title)} className="min-h-[190px] rounded-[26px] border border-[#dae4de] bg-white p-6 shadow-[0_18px_55px_rgba(24,57,43,0.05)]"><div className="grid size-11 place-items-center rounded-2xl bg-[#e8f3ef] text-[#17777b]"><ItemIcon className="size-5" strokeWidth={1.8} /></div><h3 className="mt-6 font-serif text-[24px] leading-tight">{String(title)}</h3><p className="mt-3 max-w-sm text-[12px] leading-relaxed text-[#718078]">{String(text)}</p></div>;
         })}
       </div>
     </div>
