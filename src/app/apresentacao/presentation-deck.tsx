@@ -19,7 +19,6 @@ import {
   NotebookPen,
   ShieldCheck,
   Sparkles,
-  UsersRound,
 } from "lucide-react";
 
 const totalSlides = 8;
@@ -107,13 +106,13 @@ const slides = [
       <Tag>O que compreendemos</Tag>
       <div className="mt-6 grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
         <div>
-          <h2 className="font-serif text-[clamp(40px,5vw,72px)] leading-[1.02] tracking-[-0.04em]">O conteúdo já existe.<br /><span className="text-[#178187]">O potencial está nas conexões.</span></h2>
+          <h2 className="font-serif text-[clamp(40px,5vw,72px)] leading-[1.02] tracking-[-0.04em]">O conteúdo já existe.<br /><span className="text-[#178187]">O desafio está em conectá-lo.</span></h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
           {[
-            [FileText, "Muitos formatos", "Materiais ricos, extensos e distribuídos em diferentes lugares."],
-            [UsersRound, "Diferentes olhares", "Professor, aluno, família e direção precisam acessar o que faz sentido para cada um."],
-            [Sparkles, "Conhecimento vivo", "O que nasce na preparação e na sala de aula pode permanecer e inspirar novos ciclos."],
+            [FileText, "Conteúdo espalhado", "PDFs, vídeos, links, textos e exercícios estão distribuídos em diferentes lugares."],
+            [NotebookPen, "Preparação fragmentada", "Para preparar uma aula, o professor precisa buscar, reunir e contextualizar novamente o que pretende utilizar."],
+            [Layers3, "Contribuições que se perdem", "O que funciona em uma turma nem sempre permanece organizado para apoiar professores e ciclos seguintes."],
           ].map(([Icon, title, text]) => {
             const ItemIcon = Icon as typeof FileText;
             return (
@@ -131,23 +130,23 @@ const slides = [
 
   <SlideFrame key="vision" number={3} dark eyebrow="A visão">
     <div className="w-full">
-      <div className="max-w-4xl">
-        <Tag dark>Mais do que um repositório</Tag>
-        <h2 className="mt-7 font-serif text-[clamp(42px,6vw,82px)] leading-[0.98] tracking-[-0.04em]">A aula como um<br /><span className="text-[#b8e441]">ambiente vivo.</span></h2>
+      <div className="max-w-6xl">
+        <Tag dark>A visão da plataforma</Tag>
+        <h2 className="mt-7 font-serif text-[clamp(42px,5vw,76px)] leading-[0.98] tracking-[-0.04em]">Tudo o que sustenta uma aula,<br /><span className="text-[#b8e441]">conectado em um só ambiente.</span></h2>
       </div>
       <div className="mt-10 grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-4">
         {[
-          [LibraryBig, "Reunir", "Conteúdos com contexto"],
-          [BookOpenText, "Compreender", "Navegação mais amigável"],
-          [NotebookPen, "Preparar", "Um espaço livre para o professor"],
-          [Layers3, "Preservar", "Memória pedagógica coletiva"],
-        ].map(([Icon, title, text], index) => {
+          [LibraryBig, "Acervo conectado", "PDFs, vídeos, links e exercícios organizados ao redor de cada aula."],
+          [BookOpenText, "Acesso com contexto", "Cada pessoa encontra o conteúdo adequado ao seu papel e ao momento de uso."],
+          [NotebookPen, "Preparação docente", "O professor pesquisa, organiza e acrescenta recursos no mesmo ambiente."],
+          [Layers3, "Memória pedagógica", "Contribuições e aprendizados permanecem disponíveis para os próximos ciclos."],
+        ].map(([Icon, title, text]) => {
           const ItemIcon = Icon as typeof LibraryBig;
           return (
             <div key={String(title)} className="rounded-[24px] border border-white/12 bg-white/[0.07] p-5 backdrop-blur-sm">
-              <div className="flex items-center justify-between"><ItemIcon className="size-5 text-[#79d6d8]" strokeWidth={1.7} /><span className="text-[10px] text-white/32">0{index + 1}</span></div>
+              <ItemIcon className="size-5 text-[#79d6d8]" strokeWidth={1.7} />
               <h3 className="mt-8 font-serif text-[24px]">{String(title)}</h3>
-              <p className="mt-1 text-[11px] leading-relaxed text-white/52">{String(text)}</p>
+              <p className="mt-2 text-[12px] leading-relaxed text-white/52">{String(text)}</p>
             </div>
           );
         })}
