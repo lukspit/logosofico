@@ -227,7 +227,7 @@ const slides = [
       <div className="overflow-hidden rounded-[32px] bg-[#08366f] text-white shadow-[0_30px_90px_rgba(8,54,111,0.22)]">
         <div className="border-b border-white/10 p-7">
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#79d6d8]">Implantação completa</p>
-          <div className="mt-3 flex items-end gap-3"><span className="font-serif text-[clamp(48px,6vw,76px)] leading-none tracking-[-0.04em]">R$ 22.500</span></div>
+          <div className="mt-3 flex items-end gap-3"><span className="font-serif text-[clamp(48px,6vw,76px)] leading-none tracking-[-0.04em]">R$ 17.500</span></div>
           <p className="mt-3 text-xs text-white/46">50% na contratação · 50% na entrega</p>
         </div>
         <div className="grid gap-6 p-7 sm:grid-cols-2">
