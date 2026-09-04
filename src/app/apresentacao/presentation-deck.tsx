@@ -22,7 +22,7 @@ import {
   UsersRound,
 } from "lucide-react";
 
-const totalSlides = 7;
+const totalSlides = 8;
 
 function Brand({ inverse = false }: { inverse?: boolean }) {
   return (
@@ -90,6 +90,7 @@ const slides = [
         <p className="mt-7 max-w-2xl text-[clamp(15px,1.45vw,21px)] leading-relaxed text-white/62">
           Um ambiente próprio para reunir conteúdos, apoiar o trabalho docente e transformar experiências em memória pedagógica.
         </p>
+        <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/38">Colégio Logosófico González Pecotche · Chapecó · Setembro de 2026</p>
       </div>
       <div className="hidden justify-self-end lg:block">
         <div className="relative grid size-[270px] place-items-center rounded-[54px] border border-white/12 bg-white/8 shadow-[0_35px_90px_rgba(0,0,0,0.2)] backdrop-blur-sm">
@@ -154,12 +155,12 @@ const slides = [
     </div>
   </SlideFrame>,
 
-  <SlideFrame key="demo" number={4} eyebrow="Uma primeira materialização">
+  <SlideFrame key="demo" number={4} eyebrow="Demonstração da plataforma">
     <div className="grid w-full items-center gap-12 lg:grid-cols-[1fr_1fr]">
       <div className="max-w-2xl">
-        <Tag>A visão em movimento</Tag>
-        <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Uma primeira experiência para tornar o futuro <span className="text-[#178187]">visível.</span></h2>
-        <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-[#6a7971]">A demonstração não é o produto final. É uma forma concreta de explorar o potencial e construir o caminho juntos.</p>
+        <Tag>A proposta em funcionamento</Tag>
+        <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">A plataforma em <span className="text-[#178187]">funcionamento.</span></h2>
+        <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-[#6a7971]">A demonstração apresenta os principais conceitos da experiência e permite visualizar como conteúdos, pessoas e trabalho pedagógico estarão conectados.</p>
         <Link href="/" target="_blank" className="mt-8 inline-flex h-12 items-center gap-3 rounded-2xl bg-[#08366f] px-5 text-sm font-semibold text-white shadow-[0_14px_35px_rgba(8,54,111,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0b447f]">
           Abrir demonstração <ExternalLink className="size-4" />
         </Link>
@@ -180,16 +181,16 @@ const slides = [
   <SlideFrame key="delivery" number={5} eyebrow="O que será entregue">
     <div className="w-full">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div className="max-w-3xl"><Tag>Primeira versão institucional</Tag><h2 className="mt-6 font-serif text-[clamp(40px,5vw,70px)] leading-[1] tracking-[-0.04em]">Pronta para receber<br /><span className="text-[#178187]">os primeiros usuários.</span></h2></div>
-        <p className="max-w-md text-[14px] leading-relaxed text-[#697870]">Em 45 dias, a primeira versão estará configurada, validada e publicada para iniciar a utilização acompanhada no colégio.</p>
+        <div className="max-w-3xl"><Tag>Entrega completa</Tag><h2 className="mt-6 font-serif text-[clamp(40px,5vw,70px)] leading-[1] tracking-[-0.04em]">Pronta para funcionar<br /><span className="text-[#178187]">no colégio.</span></h2></div>
+        <p className="max-w-md text-[14px] leading-relaxed text-[#697870]">Em 45 dias, a plataforma será entregue configurada, validada e publicada, com o escopo acordado pronto para uso.</p>
       </div>
       <div className="mt-9 grid grid-cols-2 gap-3 lg:grid-cols-5">
         {[
-          [ShieldCheck, "Base segura", "Acessos, perfis e dados organizados"],
-          [BookOpenText, "Conteúdo inicial", "Aulas e materiais preparados"],
-          [NotebookPen, "Trabalho docente", "Leitura, organização e preparação"],
-          [Sparkles, "Inteligência contextual", "Assistência sobre o acervo aprovado"],
-          [GraduationCap, "Entrada em operação", "Publicação, orientação e acompanhamento"],
+          [ShieldCheck, "Acessos e estrutura", "Perfis, permissões e dados configurados"],
+          [BookOpenText, "Conteúdos organizados", "Materiais previstos no escopo, prontos para consulta"],
+          [NotebookPen, "Experiência docente", "Leitura, organização e preparação de aulas"],
+          [Sparkles, "Assistente contextual", "Inteligência conectada ao acervo aprovado pelo colégio"],
+          [GraduationCap, "Entrada em operação", "Publicação, configuração e orientação inicial"],
         ].map(([Icon, title, text]) => {
           const ItemIcon = Icon as typeof ShieldCheck;
           return <div key={String(title)} className="min-h-[170px] rounded-[23px] border border-[#dae4de] bg-white p-5"><ItemIcon className="size-5 text-[#17777b]" strokeWidth={1.8} /><h3 className="mt-7 font-serif text-[20px] leading-tight">{String(title)}</h3><p className="mt-2 text-[11px] leading-relaxed text-[#718078]">{String(text)}</p></div>;
@@ -201,7 +202,7 @@ const slides = [
   <SlideFrame key="journey" number={6} dark eyebrow="Como vamos construir">
     <div className="w-full">
       <div className="grid items-end gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="max-w-xl"><Tag dark>45 dias de construção</Tag><h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Um caminho feito<br /><span className="text-[#b8e441]">em conjunto.</span></h2><p className="mt-6 text-[14px] leading-relaxed text-white/58">Reuniões semanais mantêm a solução conectada à realidade pedagógica enquanto o produto evolui.</p></div>
+        <div className="max-w-xl"><Tag dark>45 dias de implantação</Tag><h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Um caminho feito<br /><span className="text-[#b8e441]">em conjunto.</span></h2><p className="mt-6 text-[14px] leading-relaxed text-white/58">Reuniões semanais permitem validar decisões e manter a implantação conectada à realidade pedagógica do colégio.</p></div>
         <div>
           <div className="relative grid gap-4 sm:grid-cols-3">
             <div className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-gradient-to-r from-[#45bec2] via-white/25 to-[#a8d62e] sm:block" />
@@ -217,12 +218,38 @@ const slides = [
     </div>
   </SlideFrame>,
 
-  <SlideFrame key="investment" number={7} eyebrow="Proposta de parceria">
+  <SlideFrame key="responsibilities" number={7} eyebrow="Responsabilidades">
+    <div className="grid w-full items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+      <div className="max-w-2xl">
+        <Tag>Execução do projeto</Tag>
+        <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Responsabilidades durante a <span className="text-[#178187]">implantação.</span></h2>
+        <p className="mt-6 max-w-lg text-[14px] leading-relaxed text-[#6a7971]">A divisão clara das responsabilidades mantém o cronograma objetivo e as decisões conectadas ao funcionamento do colégio.</p>
+      </div>
+      <div className="grid gap-9 sm:grid-cols-2">
+        <div className="border-l-2 border-[#178187] pl-6">
+          <div className="grid size-12 place-items-center rounded-2xl bg-[#e5f1ee] text-[#17777b]"><ShieldCheck className="size-5" strokeWidth={1.8} /></div>
+          <h3 className="mt-5 font-serif text-[26px]">Desenvolvimento e implantação</h3>
+          <div className="mt-5 space-y-3">
+            {["Construção e configuração da plataforma", "Apresentações semanais da evolução", "Publicação e preparação dos acessos", "Orientação para a entrada em uso"].map((item) => <p key={item} className="flex items-start gap-3 text-[12px] leading-relaxed text-[#65766d]"><Check className="mt-0.5 size-4 shrink-0 text-[#178187]" />{item}</p>)}
+          </div>
+        </div>
+        <div className="border-l-2 border-[#a8d62e] pl-6">
+          <div className="grid size-12 place-items-center rounded-2xl bg-[#edf4df] text-[#5f8423]"><MessagesSquare className="size-5" strokeWidth={1.8} /></div>
+          <h3 className="mt-5 font-serif text-[26px]">Participação do colégio</h3>
+          <div className="mt-5 space-y-3">
+            {["Definição de uma pessoa responsável", "Disponibilização dos materiais acordados", "Validação das decisões nos encontros", "Informações dos usuários para configuração"].map((item) => <p key={item} className="flex items-start gap-3 text-[12px] leading-relaxed text-[#65766d]"><Check className="mt-0.5 size-4 shrink-0 text-[#6f9729]" />{item}</p>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </SlideFrame>,
+
+  <SlideFrame key="investment" number={8} eyebrow="Proposta comercial">
     <div className="grid w-full items-center gap-10 lg:grid-cols-[0.82fr_1.18fr]">
       <div className="max-w-2xl">
-        <Tag>Próximo passo</Tag>
-        <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Transformar a visão em uma experiência <span className="text-[#178187]">real.</span></h2>
-        <p className="mt-6 max-w-lg text-[14px] leading-relaxed text-[#6a7971]">Uma construção próxima, com espaço para aprender durante o percurso e uma base preparada para evoluir.</p>
+        <Tag>Investimento e condições</Tag>
+        <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Plataforma completa em <span className="text-[#178187]">45 dias.</span></h2>
+        <p className="mt-6 max-w-lg text-[14px] leading-relaxed text-[#6a7971]">A aprovação da proposta abre a formalização do projeto e a reunião de início da implantação.</p>
       </div>
       <div className="overflow-hidden rounded-[32px] bg-[#08366f] text-white shadow-[0_30px_90px_rgba(8,54,111,0.22)]">
         <div className="border-b border-white/10 p-7">
@@ -231,10 +258,10 @@ const slides = [
           <p className="mt-3 text-xs text-white/46">50% na contratação · 50% na entrega</p>
         </div>
         <div className="grid gap-6 p-7 sm:grid-cols-2">
-          <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">Prazo</p><p className="mt-2 font-serif text-3xl">45 dias</p><p className="mt-1 text-[11px] text-white/45">com acompanhamento semanal</p></div>
-          <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">Continuidade</p><p className="mt-2 font-serif text-3xl">R$ 1.290<span className="text-sm text-white/50"> / mês</span></p><p className="mt-1 text-[11px] text-white/45">sustentação e evolução</p></div>
+          <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">Prazo</p><p className="mt-2 font-serif text-3xl">45 dias</p><p className="mt-1 text-[11px] text-white/45">a partir da reunião de início e dos materiais acordados</p></div>
+          <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">Continuidade</p><p className="mt-2 font-serif text-3xl">R$ 1.290<span className="text-sm text-white/50"> / mês</span></p><p className="mt-1 text-[11px] text-white/45">após a entrega da plataforma</p></div>
         </div>
-        <div className="mx-7 mb-7 flex items-start gap-3 rounded-2xl bg-white/8 px-4 py-3 text-[11px] leading-relaxed text-white/52"><Check className="mt-0.5 size-4 shrink-0 text-[#b8e441]" />Infraestrutura e consumo de inteligência artificial contratados conforme a utilização.</div>
+        <div className="mx-7 mb-7 flex items-start gap-3 rounded-2xl bg-white/8 px-4 py-3 text-[11px] leading-relaxed text-white/52"><Check className="mt-0.5 size-4 shrink-0 text-[#b8e441]" />A mensalidade inclui suporte, correções, monitoramento e pequenas melhorias. Novos módulos, infraestrutura e consumo de inteligência artificial serão alinhados separadamente.</div>
       </div>
     </div>
   </SlideFrame>,
