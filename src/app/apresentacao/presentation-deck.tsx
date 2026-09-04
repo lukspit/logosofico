@@ -21,7 +21,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const totalSlides = 8;
+const totalSlides = 7;
 
 function Brand({ inverse = false }: { inverse?: boolean }) {
   return (
@@ -217,33 +217,7 @@ const slides = [
     </div>
   </SlideFrame>,
 
-  <SlideFrame key="responsibilities" number={7} eyebrow="Responsabilidades">
-    <div className="grid w-full items-center gap-12 lg:grid-cols-[0.78fr_1.22fr]">
-      <div className="max-w-2xl">
-        <Tag>Execução do projeto</Tag>
-        <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Responsabilidades durante a <span className="text-[#178187]">implantação.</span></h2>
-        <p className="mt-6 max-w-lg text-[14px] leading-relaxed text-[#6a7971]">A divisão clara das responsabilidades mantém o cronograma objetivo e as decisões conectadas ao funcionamento do colégio.</p>
-      </div>
-      <div className="grid gap-9 sm:grid-cols-2">
-        <div className="border-l-2 border-[#178187] pl-6">
-          <div className="grid size-12 place-items-center rounded-2xl bg-[#e5f1ee] text-[#17777b]"><ShieldCheck className="size-5" strokeWidth={1.8} /></div>
-          <h3 className="mt-5 font-serif text-[26px]">Desenvolvimento e implantação</h3>
-          <div className="mt-5 space-y-3">
-            {["Construção e configuração da plataforma", "Apresentações semanais da evolução", "Publicação e preparação dos acessos", "Orientação para a entrada em uso"].map((item) => <p key={item} className="flex items-start gap-3 text-[12px] leading-relaxed text-[#65766d]"><Check className="mt-0.5 size-4 shrink-0 text-[#178187]" />{item}</p>)}
-          </div>
-        </div>
-        <div className="border-l-2 border-[#a8d62e] pl-6">
-          <div className="grid size-12 place-items-center rounded-2xl bg-[#edf4df] text-[#5f8423]"><MessagesSquare className="size-5" strokeWidth={1.8} /></div>
-          <h3 className="mt-5 font-serif text-[26px]">Participação do colégio</h3>
-          <div className="mt-5 space-y-3">
-            {["Definição de uma pessoa responsável", "Disponibilização dos materiais acordados", "Validação das decisões nos encontros", "Informações dos usuários para configuração"].map((item) => <p key={item} className="flex items-start gap-3 text-[12px] leading-relaxed text-[#65766d]"><Check className="mt-0.5 size-4 shrink-0 text-[#6f9729]" />{item}</p>)}
-          </div>
-        </div>
-      </div>
-    </div>
-  </SlideFrame>,
-
-  <SlideFrame key="investment" number={8} eyebrow="Proposta comercial">
+  <SlideFrame key="investment" number={7} eyebrow="Proposta comercial">
     <div className="grid w-full items-center gap-10 lg:grid-cols-[0.82fr_1.18fr]">
       <div className="max-w-2xl">
         <Tag>Investimento e condições</Tag>
