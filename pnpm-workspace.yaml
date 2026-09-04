@@ -1,0 +1,6 @@
+allowBuilds:
+  '@openrouter/sdk': false
+  sharp: false
+  unrs-resolver: false
+publicHoistPattern:
+  - pdfjs-dist
