@@ -178,7 +178,26 @@ const slides = [
     </div>
   </SlideFrame>,
 
-  <SlideFrame key="delivery" number={5} eyebrow="O que será entregue">
+  <SlideFrame key="journey" number={5} dark eyebrow="Como vamos construir">
+    <div className="w-full">
+      <div className="grid items-end gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="max-w-xl"><Tag dark>45 dias de implantação</Tag><h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Um caminho feito<br /><span className="text-[#b8e441]">em conjunto.</span></h2><p className="mt-6 text-[14px] leading-relaxed text-white/58">Reuniões semanais permitem validar decisões e manter a implantação conectada à realidade pedagógica do colégio.</p></div>
+        <div>
+          <div className="relative grid gap-4 sm:grid-cols-3">
+            <div className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-gradient-to-r from-[#45bec2] via-white/25 to-[#a8d62e] sm:block" />
+            {[
+              ["01", "Alinhar", "Escopo, acessos, materiais e critérios de sucesso."],
+              ["02", "Construir e validar", "Ciclos semanais de demonstração, escuta e ajuste."],
+              ["03", "Colocar em uso", "Publicação, orientação e primeiros usuários."],
+            ].map(([number, title, text]) => <div key={number} className="relative rounded-[25px] border border-white/12 bg-white/[0.07] p-5 backdrop-blur"><span className="relative z-10 grid size-14 place-items-center rounded-2xl bg-[#0e4a87] text-xs font-bold text-[#aee2e3] ring-8 ring-[#07366f]">{number}</span><h3 className="mt-7 font-serif text-[23px]">{title}</h3><p className="mt-2 text-[12px] leading-relaxed text-white/50">{text}</p></div>)}
+          </div>
+          <div className="mt-4 flex items-center gap-3 rounded-2xl border border-[#a8d62e]/25 bg-[#a8d62e]/10 px-5 py-4 text-[12px] text-white/70"><CalendarRange className="size-5 shrink-0 text-[#b8e441]" /><strong className="text-white">Encontro semanal:</strong> acompanhamento próximo para compreender, decidir e ajustar o caminho.</div>
+        </div>
+      </div>
+    </div>
+  </SlideFrame>,
+
+  <SlideFrame key="delivery" number={6} eyebrow="O que será entregue">
     <div className="w-full">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl"><Tag>Entrega completa</Tag><h2 className="mt-6 font-serif text-[clamp(40px,5vw,70px)] leading-[1] tracking-[-0.04em]">Pronta para funcionar<br /><span className="text-[#178187]">no colégio.</span></h2></div>
@@ -195,25 +214,6 @@ const slides = [
           const ItemIcon = Icon as typeof ShieldCheck;
           return <div key={String(title)} className="min-h-[170px] rounded-[23px] border border-[#dae4de] bg-white p-5"><ItemIcon className="size-5 text-[#17777b]" strokeWidth={1.8} /><h3 className="mt-7 font-serif text-[20px] leading-tight">{String(title)}</h3><p className="mt-2 text-[11px] leading-relaxed text-[#718078]">{String(text)}</p></div>;
         })}
-      </div>
-    </div>
-  </SlideFrame>,
-
-  <SlideFrame key="journey" number={6} dark eyebrow="Como vamos construir">
-    <div className="w-full">
-      <div className="grid items-end gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="max-w-xl"><Tag dark>45 dias de implantação</Tag><h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Um caminho feito<br /><span className="text-[#b8e441]">em conjunto.</span></h2><p className="mt-6 text-[14px] leading-relaxed text-white/58">Reuniões semanais permitem validar decisões e manter a implantação conectada à realidade pedagógica do colégio.</p></div>
-        <div>
-          <div className="relative grid gap-4 sm:grid-cols-3">
-            <div className="absolute left-[16%] right-[16%] top-7 hidden h-px bg-gradient-to-r from-[#45bec2] via-white/25 to-[#a8d62e] sm:block" />
-            {[
-              ["01", "Alinhar", "Escopo, acessos, materiais e critérios de sucesso."],
-              ["02", "Construir e validar", "Ciclos semanais de demonstração, escuta e ajuste."],
-              ["03", "Colocar em uso", "Publicação, orientação e primeiros usuários."],
-            ].map(([number, title, text]) => <div key={number} className="relative rounded-[25px] border border-white/12 bg-white/[0.07] p-5 backdrop-blur"><span className="relative z-10 grid size-14 place-items-center rounded-2xl bg-[#0e4a87] text-xs font-bold text-[#aee2e3] ring-8 ring-[#07366f]">{number}</span><h3 className="mt-7 font-serif text-[23px]">{title}</h3><p className="mt-2 text-[12px] leading-relaxed text-white/50">{text}</p></div>)}
-          </div>
-          <div className="mt-4 flex items-center gap-3 rounded-2xl border border-[#a8d62e]/25 bg-[#a8d62e]/10 px-5 py-4 text-[12px] text-white/70"><CalendarRange className="size-5 shrink-0 text-[#b8e441]" /><strong className="text-white">Encontro semanal:</strong> acompanhamento próximo para compreender, decidir e ajustar o caminho.</div>
-        </div>
       </div>
     </div>
   </SlideFrame>,
