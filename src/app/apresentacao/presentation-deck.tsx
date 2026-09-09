@@ -19,12 +19,14 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+import styles from "./presentation-deck.module.css";
+
 const totalSlides = 7;
 
 function Brand({ inverse = false }: { inverse?: boolean }) {
   return (
-    <div className="flex items-center gap-3">
-      <div className={`grid size-11 place-items-center rounded-[14px] ${inverse ? "bg-white" : "bg-[#08366f]"}`}>
+    <div className="flex shrink-0 items-center gap-3">
+      <div className={`grid size-11 shrink-0 place-items-center rounded-[14px] ${inverse ? "bg-white" : "bg-[#08366f]"}`}>
         <Image
           src="/brand/monograma-cl-branco.jpeg"
           alt="Colégio Logosófico"
@@ -54,19 +56,19 @@ function SlideFrame({
   number: number;
 }) {
   return (
-    <section className={`relative h-full w-full overflow-hidden ${dark ? "bg-[#07366f] text-white" : "bg-[#f5f7f3] text-[#143657]"}`}>
+    <section aria-label={`Slide ${number} de ${totalSlides}: ${eyebrow}`} className={`${styles.frame} ${dark ? styles.dark : ""} relative w-full overflow-hidden ${dark ? "bg-[#07366f] text-white" : "bg-[#f5f7f3] text-[#143657]"}`}>
       <div className={`absolute inset-x-0 top-0 h-1 ${dark ? "bg-[#a8d62e]" : "bg-gradient-to-r from-[#08366f] via-[#35b8bd] to-[#a8d62e]"}`} />
-      <div className={`absolute -right-36 -top-36 size-[440px] rounded-full border-[72px] ${dark ? "border-[#15528f]/70" : "border-[#e4ede7]"}`} />
-      <div className={`absolute -bottom-44 -left-44 size-[360px] rounded-full ${dark ? "bg-[#a8d62e]/90" : "bg-[#dff0dc]"}`} />
-      <div className="relative z-10 flex h-full flex-col px-[clamp(28px,6vw,92px)] py-[clamp(24px,5vh,54px)]">
-        <header className="flex items-center justify-between">
+      <div aria-hidden="true" className={`pointer-events-none absolute -right-36 -top-36 size-[440px] rounded-full border-[72px] ${dark ? "border-[#15528f]/70" : "border-[#e4ede7]"}`} />
+      <div aria-hidden="true" className={`${styles.bottomDecoration} pointer-events-none absolute -bottom-44 -left-44 size-[360px] rounded-full ${dark ? "bg-[#a8d62e]/90" : "bg-[#dff0dc]"}`} />
+      <div className={`${styles.frameInner} relative z-10 flex flex-col`}>
+        <header className="flex shrink-0 items-center justify-between gap-4">
           <Brand inverse={dark} />
-          <div className="flex items-center gap-4">
-            {eyebrow && <span className={`hidden text-[10px] font-bold uppercase tracking-[0.2em] sm:block ${dark ? "text-[#7ed8d9]" : "text-[#17767a]"}`}>{eyebrow}</span>}
-            <span className={`text-[11px] font-semibold tabular-nums ${dark ? "text-white/40" : "text-[#84928b]"}`}>{String(number).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}</span>
+          <div className="flex min-w-0 items-center gap-4 text-right">
+            {eyebrow && <span className={`hidden text-[10px] font-bold uppercase tracking-[0.2em] lg:block ${dark ? "text-[#7ed8d9]" : "text-[#17767a]"}`}>{eyebrow}</span>}
+            <span className={`shrink-0 text-[11px] font-semibold tabular-nums ${dark ? "text-white/40" : "text-[#84928b]"}`}>{String(number).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}</span>
           </div>
         </header>
-        <div className="flex min-h-0 flex-1 items-center">{children}</div>
+        <div className={`${styles.content} flex flex-1 items-center`}>{children}</div>
       </div>
     </section>
   );
@@ -106,7 +108,7 @@ const slides = [
         <div>
           <h2 className="font-serif text-[clamp(40px,5vw,72px)] leading-[1.02] tracking-[-0.04em]">O conteúdo já existe.<br /><span className="text-[#178187]">O desafio está em conectá-lo.</span></h2>
         </div>
-        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
           {[
             [FileText, "Conteúdo espalhado", "PDFs, vídeos, links, textos e exercícios estão distribuídos em diferentes lugares."],
             [NotebookPen, "Preparação fragmentada", "Para preparar uma aula, o professor precisa buscar, reunir e contextualizar novamente o que pretende utilizar."],
@@ -132,7 +134,7 @@ const slides = [
         <Tag dark>A visão da plataforma</Tag>
         <h2 className="mt-7 font-serif text-[clamp(42px,5vw,76px)] leading-[0.98] tracking-[-0.04em]">Tudo o que sustenta uma aula,<br /><span className="text-[#b8e441]">conectado em um só ambiente.</span></h2>
       </div>
-      <div className="mt-10 grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-4">
+      <div className="mt-10 grid max-w-6xl grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {[
           [LibraryBig, "Acervo conectado", "PDFs, vídeos, links e exercícios organizados ao redor de cada aula."],
           [BookOpenText, "Acesso com contexto", "Cada pessoa encontra o conteúdo adequado ao seu papel e ao momento de uso."],
@@ -143,7 +145,7 @@ const slides = [
           return (
             <div key={String(title)} className="rounded-[24px] border border-white/12 bg-white/[0.07] p-5 backdrop-blur-sm">
               <ItemIcon className="size-5 text-[#79d6d8]" strokeWidth={1.7} />
-              <h3 className="mt-8 font-serif text-[24px]">{String(title)}</h3>
+              <h3 className="mt-5 font-serif text-[24px] lg:mt-8">{String(title)}</h3>
               <p className="mt-2 text-[12px] leading-relaxed text-white/52">{String(text)}</p>
             </div>
           );
@@ -158,7 +160,7 @@ const slides = [
         <Tag>A proposta em funcionamento</Tag>
         <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">A plataforma em <span className="text-[#178187]">funcionamento.</span></h2>
         <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-[#6a7971]">A demonstração apresenta os principais conceitos da experiência e permite visualizar como conteúdos, pessoas e trabalho pedagógico estarão conectados.</p>
-        <Link href="/" target="_blank" className="mt-8 inline-flex h-12 items-center gap-3 rounded-2xl bg-[#08366f] px-5 text-sm font-semibold text-white shadow-[0_14px_35px_rgba(8,54,111,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0b447f]">
+        <Link href="/" target="_blank" className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 sm:w-auto rounded-2xl bg-[#08366f] px-5 text-sm font-semibold text-white shadow-[0_14px_35px_rgba(8,54,111,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0b447f]">
           Abrir demonstração <ExternalLink className="size-4" />
         </Link>
       </div>
@@ -186,9 +188,9 @@ const slides = [
               ["01", "Alinhar", "Escopo, acessos, materiais e critérios de sucesso."],
               ["02", "Construir e validar", "Ciclos semanais de demonstração, escuta e ajuste."],
               ["03", "Colocar em uso", "Publicação, orientação e primeiros usuários."],
-            ].map(([number, title, text]) => <div key={number} className="relative rounded-[25px] border border-white/12 bg-white/[0.07] p-5 backdrop-blur"><span className="relative z-10 grid size-14 place-items-center rounded-2xl bg-[#0e4a87] text-xs font-bold text-[#aee2e3] ring-8 ring-[#07366f]">{number}</span><h3 className="mt-7 font-serif text-[23px]">{title}</h3><p className="mt-2 text-[12px] leading-relaxed text-white/50">{text}</p></div>)}
+            ].map(([number, title, text]) => <div key={number} className="relative rounded-[25px] border border-white/12 bg-white/[0.07] p-5 backdrop-blur"><span className="relative z-10 grid size-14 place-items-center rounded-2xl bg-[#0e4a87] text-xs font-bold text-[#aee2e3] ring-8 ring-[#07366f]">{number}</span><h3 className="mt-5 font-serif text-[23px] lg:mt-7">{title}</h3><p className="mt-2 text-[12px] leading-relaxed text-white/50">{text}</p></div>)}
           </div>
-          <div className="mt-4 flex items-center gap-3 rounded-2xl border border-[#a8d62e]/25 bg-[#a8d62e]/10 px-5 py-4 text-[12px] text-white/70"><CalendarRange className="size-5 shrink-0 text-[#b8e441]" /><strong className="text-white">Encontro semanal:</strong> acompanhamento próximo para compreender, decidir e ajustar o caminho.</div>
+          <div className="mt-4 flex items-center gap-3 rounded-2xl border border-[#a8d62e]/25 bg-[#a8d62e]/10 px-5 py-4 text-[12px] text-white/70"><CalendarRange className="size-5 shrink-0 text-[#b8e441]" /><p><strong className="text-white">Encontro semanal:</strong> acompanhamento próximo para compreender, decidir e ajustar o caminho.</p></div>
         </div>
       </div>
     </div>
@@ -220,7 +222,7 @@ const slides = [
         <h2 className="mt-7 font-serif text-[clamp(42px,5.5vw,76px)] leading-[1] tracking-[-0.04em]">Plataforma completa em <span className="text-[#178187]">45 dias.</span></h2>
         <p className="mt-6 max-w-lg text-[14px] leading-relaxed text-[#6a7971]">A aprovação da proposta abre a formalização do projeto e a reunião de início da implantação.</p>
       </div>
-      <div className="overflow-hidden rounded-[32px] bg-[#08366f] text-white shadow-[0_30px_90px_rgba(8,54,111,0.22)]">
+      <div className={`${styles.priceCard} overflow-hidden rounded-[32px] bg-[#08366f] text-white shadow-[0_30px_90px_rgba(8,54,111,0.22)]`}>
         <div className="border-b border-white/10 p-7">
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#79d6d8]">Implantação completa</p>
           <div className="mt-3 flex items-end gap-3"><span className="font-serif text-[clamp(48px,6vw,76px)] leading-none tracking-[-0.04em]">R$ 17.500</span></div>
@@ -230,7 +232,7 @@ const slides = [
           <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">Prazo</p><p className="mt-2 font-serif text-3xl">45 dias</p><p className="mt-1 text-[11px] text-white/45">a partir da reunião de início e dos materiais acordados</p></div>
           <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/42">Continuidade</p><p className="mt-2 font-serif text-3xl">R$ 1.290<span className="text-sm text-white/50"> / mês</span></p><p className="mt-1 text-[11px] text-white/45">após a entrega da plataforma</p></div>
         </div>
-        <div className="mx-7 mb-7 flex items-start gap-3 rounded-2xl bg-white/8 px-4 py-3 text-[11px] leading-relaxed text-white/52"><Check className="mt-0.5 size-4 shrink-0 text-[#b8e441]" />A mensalidade inclui suporte, correções, monitoramento e pequenas melhorias. Novos módulos, infraestrutura e consumo de inteligência artificial serão alinhados separadamente.</div>
+        <div className={`${styles.commercialNote} mx-7 mb-7 flex items-start gap-3 rounded-2xl bg-white/8 px-4 py-3 text-[11px] leading-relaxed text-white/52`}><Check className="mt-0.5 size-4 shrink-0 text-[#b8e441]" />A mensalidade inclui suporte, correções, monitoramento e pequenas melhorias. Novos módulos, infraestrutura e consumo de inteligência artificial serão alinhados separadamente.</div>
       </div>
     </div>
   </SlideFrame>,
@@ -245,46 +247,60 @@ export function PresentationDeck() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(event.key)) {
+      const target = event.target;
+      if (
+        event.altKey || event.ctrlKey || event.metaKey ||
+        (target instanceof HTMLElement && target.closest("button, a, input, textarea, select, [contenteditable]"))
+      ) return;
+
+      // Up/down, space and Page Up/Down retain native scrolling on long slides.
+      if (event.key === "ArrowRight") {
         event.preventDefault();
         setCurrent((value) => Math.min(totalSlides - 1, value + 1));
-      }
-      if (["ArrowLeft", "ArrowUp", "PageUp"].includes(event.key)) {
+      } else if (event.key === "ArrowLeft") {
         event.preventDefault();
         setCurrent((value) => Math.max(0, value - 1));
       }
-      if (event.key === "Home") goTo(0);
-      if (event.key === "End") goTo(totalSlides - 1);
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [goTo]);
+  }, []);
 
   const enterFullscreen = async () => {
-    if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
-    else await document.exitFullscreen();
+    if (!document.fullscreenEnabled) return;
+    try {
+      if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+      else await document.exitFullscreen();
+    } catch {
+      // Some mobile browsers disallow fullscreen; the regular deck stays usable.
+    }
   };
 
   return (
-    <main className="relative h-[100svh] min-h-[560px] overflow-hidden bg-[#e8eee9] antialiased">
-      <div className="absolute inset-0">
-        {slides.map((slide, index) => (
-          <div key={index} aria-hidden={index !== current} className={`absolute inset-0 transition-all duration-500 ease-out ${index === current ? "translate-x-0 opacity-100" : index < current ? "-translate-x-8 opacity-0 pointer-events-none" : "translate-x-8 opacity-0 pointer-events-none"}`}>
-            {slide}
-          </div>
-        ))}
+    <main className={`${styles.deck} bg-[#e8eee9] antialiased`}>
+      <div key={current} className={styles.slideViewport} tabIndex={0} aria-label="Conteúdo do slide. Role para ler.">
+        {slides[current]}
       </div>
 
-      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-2xl border border-white/40 bg-[#0a2d53]/90 p-1.5 text-white shadow-[0_12px_35px_rgba(4,32,65,0.24)] backdrop-blur-xl">
-        <button onClick={() => goTo(current - 1)} disabled={current === 0} className="grid size-9 place-items-center rounded-xl text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-25" aria-label="Slide anterior"><ArrowLeft className="size-4" /></button>
-        <div className="flex items-center gap-1.5 px-1">
-          {Array.from({ length: totalSlides }).map((_, index) => <button key={index} onClick={() => goTo(index)} className={`h-1.5 rounded-full transition-all ${index === current ? "w-6 bg-[#b8e441]" : "w-1.5 bg-white/30 hover:bg-white/55"}`} aria-label={`Ir para o slide ${index + 1}`} />)}
+      <footer className={styles.footer}>
+        <p className={styles.mobileHint}>Role para ler · Use as setas para mudar de slide</p>
+        <div className={styles.controlsRow}>
+          <div className={styles.keyboardHint}><MessagesSquare className="size-3.5" />Use ← → para navegar</div>
+          <nav aria-label="Navegação da apresentação" className={styles.navigation}>
+            <button onClick={() => goTo(current - 1)} disabled={current === 0} className={styles.arrow} aria-label="Slide anterior"><ArrowLeft className="size-5" /></button>
+            <div className="flex items-center">
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <button key={index} onClick={() => goTo(index)} className={styles.dotButton} aria-label={`Ir para o slide ${index + 1}`} aria-current={index === current ? "step" : undefined}>
+                  <span className={`${styles.dot} ${index === current ? styles.activeDot : ""}`} />
+                </button>
+              ))}
+            </div>
+            <button onClick={() => goTo(current + 1)} disabled={current === totalSlides - 1} className={styles.arrow} aria-label="Próximo slide"><ArrowRight className="size-5" /></button>
+          </nav>
+          <button onClick={enterFullscreen} className={styles.fullscreen} aria-label="Alternar tela cheia"><Fullscreen className="size-4" /></button>
         </div>
-        <button onClick={() => goTo(current + 1)} disabled={current === totalSlides - 1} className="grid size-9 place-items-center rounded-xl text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-25" aria-label="Próximo slide"><ArrowRight className="size-4" /></button>
-      </div>
-
-      <button onClick={enterFullscreen} className="absolute bottom-5 right-5 z-30 grid size-10 place-items-center rounded-xl border border-white/50 bg-white/80 text-[#24435e] shadow-lg backdrop-blur transition hover:bg-white" aria-label="Ativar tela cheia"><Fullscreen className="size-4" /></button>
-      <div className="absolute bottom-6 left-6 z-30 hidden items-center gap-2 text-[10px] font-medium text-[#61766c] md:flex"><MessagesSquare className="size-3.5" />Use as setas do teclado para navegar</div>
+        <p className="sr-only" aria-live="polite" aria-atomic="true">Slide {current + 1} de {totalSlides}</p>
+      </footer>
     </main>
   );
 }
