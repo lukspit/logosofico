@@ -34,6 +34,9 @@ const slides = [
   <SlideFrame key="cover" number={1} dark label="Uma plataforma para ampliar as possibilidades do material Kinesys">
     <div className={clean.cover}>
       <h1>Uma plataforma para <span className={clean.accent}>ampliar as possibilidades</span> do material Kinesys</h1>
+      <div className={clean.coverArtwork} aria-hidden="true">
+        <Image src="/brand/monograma-cl-branco.jpeg" alt="" width={150} height={150} loading="eager" />
+      </div>
     </div>
   </SlideFrame>,
 
